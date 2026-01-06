@@ -2,7 +2,7 @@ package com.schirmr.learn_spring.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class LearnController {
@@ -10,4 +10,17 @@ public class LearnController {
     public String home() {
         return "index";
     }
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
+    
+    @PostMapping("/cadastro")
+    public String processarCadastro(String username, String password) {
+        // Lógica de salvar no banco de dados H2
+        
+        return "redirect:/login?registered";
+    }
+    
+    
 }
