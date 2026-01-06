@@ -10,11 +10,4 @@ public class LearnController {
     public String home() {
         return "index";
     }
-    
-
-    @GetMapping("/teste")
-    public String teste() {
-        return "teste";
-    }
-    
 }
