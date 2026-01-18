@@ -3,6 +3,8 @@ package com.schirmr.learn_spring.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Controller
 public class LearnController {
@@ -21,6 +23,17 @@ public class LearnController {
         
         return "redirect:/login?registered";
     }
+    
+    @GetMapping("/hello")
+    public String helloPage() {
+        return "hello";
+    }
+
+    @GetMapping("/error")
+    public String pageError() {
+        return "error";
+    }
+    
     
     
 }

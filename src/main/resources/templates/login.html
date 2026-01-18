@@ -22,7 +22,7 @@
         <div id="card-login" class="card shadow p-4">
             <h3 class="text-center mb-3">Login</h3>
             
-            <form th:action="@{/login}" method="post">
+            <form th:action="@{/login}" method="post"> <!-- ponto de entrada do spring security para login -->
                 <div class="mb-3">
                     <label class="form-label">Usuário</label>
                     <input type="text" name="username" class="form-control" required>
@@ -39,23 +39,21 @@
                 <button onclick="alternarTelas()" class="btn btn-link btn-sm">Cadastre-se aqui</button>
             </div>
 
+            
+
         </div>
 
         <div id="card-cadastro" class="card shadow p-4" style="display: none;">
             <h3 class="text-center mb-3">Novo Cadastro</h3>
             
-            <form th:action="@{/cadastro}" method="post">
+            <form th:action="@{/register}" th:object="${user}" method="post">
                 <div class="mb-3">
                     <label class="form-label">Escolha um Usuário</label>
-                    <input type="text" name="username" class="form-control" required>
+                    <input type="text" th:field="*{username}" required class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Escolha uma Senha</label>
-                    <input type="password" name="password" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control">
+                    <input type="password" th:field="*{password}" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-success w-100">Confirmar Cadastro</button>
             </form>

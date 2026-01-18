@@ -31,5 +31,5 @@ O objetivo é criar uma aplicação centralizada protegida por login, que serve 
     ```
 4.  **Acesse:** `http://localhost:8080`
 5. **Senha de acesso ao site temporário para estudo:** 
-    `Login: admin`
-    `Senha: admin123`
+    `Login: user`
+    `Senha: password`
