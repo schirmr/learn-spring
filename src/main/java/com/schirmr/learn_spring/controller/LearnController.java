@@ -3,8 +3,8 @@ package com.schirmr.learn_spring.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.ui.Model;
+import com.schirmr.learn_spring.model.LoginRequest;
 
 @Controller
 public class LearnController {
@@ -13,7 +13,8 @@ public class LearnController {
         return "index";
     }
     @GetMapping("/login")
-    public String loginPage() {
+    public String loginPage(Model model) {
+        model.addAttribute("user", new LoginRequest());
         return "login";
     }
     
